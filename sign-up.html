@@ -14,27 +14,46 @@
 			<div class="sign-up__wrapper">
 				<div class="sign-up__container">
 
-					<div class="sign-up__inner">
+					<form class="sign-up__inner">
 
 						<h2 class="sign-up__title">
 							Sign up to furrypets
 						</h2>
-						<a href="./index.html"><img id="sign-up__close-icon" src="img/icons/close.svg" alt="close"></a>
+						<a href="./index.html"><img id="close-icon" src="img/icons/close.svg" alt="close"></a>
 						
 						<div class="sign-up__form">
-							<input type="text" class="sign-up-input">
-							<input type="text" class="sign-up-input">
-							<input type="text" class="sign-up-input">
-							<input type="text" class="sign-up-input">
-							<input type="text" class="sign-up-input">
+							<label>
+								<input type="text" class="sign-up-input" value="" name="username" required>
+								<span class="input--label">Username</span> 
+							</label>
+							
+							<label>
+								<input type="text" class="sign-up-input" value="" name="email" required>
+								<span class="input--label">Email</span> 
+							</label>
+							
+							<label>
+								<input type="text" class="sign-up-input" value="" name="country" required>
+								<span class="input--label">Country</span> 
+							</label>
+
+							<label>
+								<input type="password " class="sign-up-input" value="" name="password" required>
+								<span class="input--label">Password</span> 
+							</label>
+
+							<label>
+								<input type="password " class="sign-up-input" value="" name="confirm-password" required>
+								<span class="input--label">Confirm password</span> 
+							</label>
 						</div>
 
 						<div class="sign-up__buttons">
 							<a href="./sign-in.html" class="sign-up-in__btn">Sign In</a>
-							<button class="sign-up__btn">Sign Up</button>
+							<button id="sign-up__btn">Sign Up</button>
 						</div>
 
-					</div>
+					</form>
 					
 				</div>
 			</div>

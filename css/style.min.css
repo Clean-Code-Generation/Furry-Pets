@@ -155,6 +155,7 @@ body {
   z-index: 10;
   box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.25);
   transition: 0.3s;
+  white-space: nowrap;
 }
 .header .header__container {
   padding-top: 9px;
@@ -750,6 +751,79 @@ body {
   box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.25);
 }
 
+.calendar-form__group-info label {
+  width: 100%;
+  max-width: 146px;
+  height: 53px;
+  display: block;
+  position: relative;
+}
+.calendar-form__group-info label input {
+  border: 1px solid rgba(122, 122, 122, 0.4);
+  padding: 12px 16px;
+  color: #7a7a7a;
+  font-size: 16px;
+}
+.calendar-form__group-info label input[type=time] {
+  appearance: textfield;
+}
+.calendar-form__group-info label span {
+  position: absolute;
+  display: block;
+  top: 18px;
+  left: 12px;
+  cursor: text;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.calendar-form__group-info label input:focus + span,
+.calendar-form__group-info label input:valid + span {
+  top: -8px;
+  left: 6px;
+  font-size: 12px;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.reason-for-visit label {
+  width: 100%;
+  max-width: 294px;
+  height: 53px;
+  display: block;
+  position: relative;
+}
+
+.calendar-form-notes label {
+  width: 100%;
+  max-width: 450px;
+  height: 120px;
+  display: block;
+  position: relative;
+}
+.calendar-form-notes label textarea {
+  color: #7a7a7a;
+  border: 1px solid rgba(122, 122, 122, 0.4);
+  padding: 12px 16px;
+  font-size: 16px;
+}
+.calendar-form-notes label span {
+  position: absolute;
+  display: block;
+  top: 18px;
+  left: 12px;
+  cursor: text;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.calendar-form-notes label textarea:focus + span,
+.calendar-form-notes label textarea:valid + span {
+  top: -8px;
+  left: 6px;
+  font-size: 12px;
+  padding: 5px;
+  background-color: #fff;
+}
+
 #calendar-form-btn {
   font-family: Trocchi;
   font-size: 24px;
@@ -778,12 +852,20 @@ body {
 }
 
 /*----------------------------SIGN-UP----------------------------*/
-.sign-up {
+.input--label {
+  font-family: Forum;
+  color: #7a7a7a;
+  font-size: 16px;
+}
+
+.sign-up,
+.sign-in {
   font-family: Trocchi;
   color: #12484A;
   font-size: 16px;
 }
-.sign-up__wrapper {
+.sign-up__wrapper,
+.sign-in__wrapper {
   background-color: rgba(18, 72, 74, 0.6);
   overflow: hidden;
   height: 100vh;
@@ -791,7 +873,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.sign-up__inner {
+.sign-up__inner,
+.sign-in__inner {
   text-align: center;
   position: relative;
   background-color: #EFDECD;
@@ -799,45 +882,88 @@ body {
   width: 570px;
   border-radius: 29px;
 }
-.sign-up__inner #sign-up__close-icon {
+.sign-up__inner #close-icon,
+.sign-in__inner #close-icon {
   position: absolute;
   top: 15px;
   right: 15px;
   transition: 0.3s;
 }
-.sign-up__inner #sign-up__close-icon:hover {
+.sign-up__inner #close-icon:hover,
+.sign-in__inner #close-icon:hover {
   opacity: 0.8;
 }
-.sign-up__title {
+.sign-up__title,
+.sign-in__title {
   text-transform: uppercase;
   font-size: 32px;
 }
-.sign-up__form {
+.sign-up__form,
+.sign-in__form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 25px 5px 50px;
+  text-align: left;
 }
-.sign-up__buttons {
+.sign-up__form label,
+.sign-in__form label {
+  width: 100%;
+  max-width: 470px;
+  height: 53px;
+  display: block;
+  position: relative;
+}
+.sign-up__form label input,
+.sign-in__form label input {
+  padding: 0 18px;
+  position: absolute;
+  bottom: 0;
+  border: 1px solid rgba(122, 122, 122, 0.4);
+}
+.sign-up__form label span,
+.sign-in__form label span {
+  top: 18px;
+  left: 18px;
+  border-radius: 20px;
+  position: absolute;
+  cursor: text;
+  transition: 0.2s;
+}
+.sign-up__form label input:focus + span,
+.sign-up__form label input:valid + span,
+.sign-in__form label input:focus + span,
+.sign-in__form label input:valid + span {
+  top: -8px;
+  left: 8px;
+  background-color: #fff;
+  font-size: 12px;
+  padding: 5px;
+}
+.sign-up__buttons,
+.sign-in__buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 56px;
   text-transform: uppercase;
   font-family: Trocchi;
   font-size: 24px;
 }
-.sign-up__buttons .sign-up-in__btn {
+.sign-up__buttons .sign-up-in__btn,
+.sign-in__buttons .sign-up-in__btn {
   color: #12484A;
   border: #12484A 1px solid;
   border-radius: 20px;
   padding: 15px 40px;
   transition: 0.3s;
 }
-.sign-up__buttons .sign-up-in__btn:hover {
+.sign-up__buttons .sign-up-in__btn:hover,
+.sign-in__buttons .sign-up-in__btn:hover {
   background-color: #12484A;
   color: #EFDECD;
 }
-.sign-up__btn {
+.sign-up__btn,
+.sign-in__btn {
   text-transform: uppercase;
   font-family: Trocchi;
   font-size: 24px;
@@ -848,22 +974,43 @@ body {
   border: #12484A 1px solid;
   transition: 0.3s;
 }
-.sign-up__btn:hover {
+.sign-up__btn:hover,
+.sign-in__btn:hover {
   background-color: rgba(18, 72, 74, 0.9);
 }
 
-.sign-up-input {
+#sign-up__btn,
+#sign-in__btn {
+  text-transform: uppercase;
+  font-family: Trocchi;
+  font-size: 24px;
+  color: #EFDECD;
+  background-color: #12484A;
+  border-radius: 20px;
+  padding: 15px 40px;
+  border: #12484A 1px solid;
+  transition: 0.3s;
+}
+#sign-up__btn:hover,
+#sign-in__btn:hover {
+  background-color: rgba(18, 72, 74, 0.9);
+}
+
+.sign-up-input,
+.sign-in-input {
   font-family: Forum;
   font-size: 16px;
   color: #7a7a7a;
-  width: 470px;
+  width: 100%;
+  max-width: 470px;
   height: 53px;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
-.sign-up-input:focus {
+.sign-up-input:focus,
+.sign-in-input:focus {
   box-shadow: 0px 9px 20px 0px rgba(0, 0, 0, 0.25);
 }
 
@@ -881,4 +1028,9 @@ body {
 .forgot-pass {
   text-align: left;
   padding-bottom: 28px;
+  padding-left: 18px;
+}
+
+.sign-in__form {
+  padding: 26px 0;
 }
