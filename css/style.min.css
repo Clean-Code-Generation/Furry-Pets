@@ -764,9 +764,6 @@ body {
   color: #7a7a7a;
   font-size: 16px;
 }
-.calendar-form__group-info label input[type=time] {
-  appearance: textfield;
-}
 .calendar-form__group-info label span {
   position: absolute;
   display: block;
@@ -777,7 +774,8 @@ body {
   transition: 0.2s;
 }
 .calendar-form__group-info label input:focus + span,
-.calendar-form__group-info label input:valid + span {
+.calendar-form__group-info label input:valid + span,
+.calendar-form__group-info label input[type=time] + span {
   top: -8px;
   left: 6px;
   font-size: 12px;
@@ -824,7 +822,7 @@ body {
   background-color: #fff;
 }
 
-#calendar-form-btn {
+#calendar-form__save-btn {
   font-family: Trocchi;
   font-size: 24px;
   text-transform: uppercase;
@@ -836,7 +834,7 @@ body {
   outline: none;
   border: 1px solid #12484A;
 }
-#calendar-form-btn:hover {
+#calendar-form__save-btn:hover {
   background-color: rgba(239, 222, 205, 0.6);
   color: #12484A;
   border: 1px solid #12484A;
@@ -939,6 +937,10 @@ body {
   background-color: #fff;
   font-size: 12px;
   padding: 5px;
+}
+.sign-up__form label input[type=time]::-webkit-datetime-edit-fields-wrapper,
+.sign-in__form label input[type=time]::-webkit-datetime-edit-fields-wrapper {
+  display: none;
 }
 .sign-up__buttons,
 .sign-in__buttons {
